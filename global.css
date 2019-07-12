@@ -109,7 +109,7 @@ article {
     overflow: hidden;
 }
 
-article.landing, article.intro {
+article.landing {
      height: calc(100vh - 20px);
 }
 
@@ -284,18 +284,16 @@ section.previews {
 }
 
 section.previews > h1 {
-    color: white;
-    text-shadow:
-   -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;
+    color: transparent;
     
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
     font-family: "Messap";
 }
 
-section.previews pre {
-    font-family: "EB Garamond";
+section.previews article pre,  section.previews article p {
+    font-family: "Space Mono";
 }
 
 section.previews > article > h1 {
@@ -312,11 +310,20 @@ section.previews > article > h1 {
 }
 
 section.previews > article > h2 {
-    font-family: "Space Mono";
+    font-family: "Savate";
     font-weight: 300;
     font-style: italic;
     
-    background-color: white;
+    letter-spacing: 0.08em;
+}
+
+section.previews > article > h3 {
+     font-family: "Space Mono";
+     font-weight: 300;
+}
+
+section.previews > article > h4 {
+    font-family: "Messap";
 }
 
 /* wide --------------------------------------*/
@@ -610,7 +617,6 @@ section.previews > article > h2 {
         height: 1em;
     }
     section.previews {
-        
         padding-top: 3rem;
 
         padding-bottom: 4rem;
@@ -618,12 +624,13 @@ section.previews > article > h2 {
     }
 
     section.previews > h1 {
-        font-size: 13.1vw;
+        font-size: 7vw;
 
         margin-top: 0;
-        margin-left: -0.7rem;
+        margin-left: -0.5rem;
         margin-bottom: 2rem;
     }
+    
 
     section.previews > article {
         margin-left: 4rem;
@@ -639,17 +646,30 @@ section.previews > article > h2 {
 
         transform: translate(0, -0.5rem)
     }
-
+    
     section.previews > article > h2 {
         margin: 0;
         margin-left: 5rem;
         margin-bottom: 3rem;
+        margin-top: 1.3rem;
 
         font-size: 3rem;
     }
 
-    section.previews > article > p {
-        margin-left: 9rem;
+    section.previews > article > h3 {
+        
+    }
+
+    section.previews > article > h4 {
+        margin-left: 8rem;
+        
+        font-size: 1.5rem;
+        
+        margin-bottom: 6rem;
+    }
+
+    section.previews > article > p, section.previews > article > pre {
+        margin-left: 8rem;
 
         line-height: 1.5;
 
