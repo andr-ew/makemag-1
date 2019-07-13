@@ -292,10 +292,6 @@ section.previews > h1 {
     font-family: "Messap";
 }
 
-section.previews article pre,  section.previews article p {
-    font-family: "Space Mono";
-}
-
 section.previews > article > h1 {
     float: left;
     
@@ -326,7 +322,20 @@ section.previews > article > h4 {
     font-family: "Messap";
 }
 
-/* wide --------------------------------------*/
+section.previews > article .bio strong {
+    font-family: "Messap";
+}
+
+section.previews article pre,  section.previews article p {
+    font-family: "Space Mono";
+}
+
+section.previews > article > p {
+    width: 100%;
+    max-width: 52em;
+}
+
+/* wide ---------------------------------------------------------------------------*/
 @media all and (min-width: 100vh) {  
     
     .divider {
@@ -635,12 +644,13 @@ section.previews > article > h4 {
     section.previews > article {
         margin-left: 4rem;
         margin-right: 11rem;
+        
+        margin-top: 6rem;
     }
 
     section.previews > article > h1 {
 
         margin: 0;
-    /*    margin-left: -1rem;*/
 
         font-size: 4rem;
 
@@ -649,35 +659,48 @@ section.previews > article > h4 {
     
     section.previews > article > h2 {
         margin: 0;
-        margin-left: 5rem;
-        margin-bottom: 3rem;
+        margin-left: 6.5rem;
+        margin-bottom: 1rem;
         margin-top: 1.3rem;
 
         font-size: 3rem;
     }
 
     section.previews > article > h3 {
+        margin-left: 6.5rem;
+        margin-top: 0;
+        margin-bottom: 2rem;
         
+        max-width: 35rem;
     }
 
     section.previews > article > h4 {
-        margin-left: 8rem;
+        margin-left: 10rem;
         
         font-size: 1.5rem;
         
         margin-bottom: 6rem;
+        margin-top: 3rem;
     }
 
     section.previews > article > p, section.previews > article > pre {
-        margin-left: 8rem;
+        margin-left: 10rem;
 
-        line-height: 1.5;
+        line-height: 1.65rem;
 
         margin-bottom: 6rem;
+        
+        font-size: 0.9rem;
+    }
+    
+    section.previews > article .bio strong {
+        font-family: "Messap";
+        
+        font-size: 1.1rem;
     }
 }
 
-/*tall--------------------------------------*/
+/*tall-------------------------------------------------------------------------------*/
 @media all and (max-width: 100vh) { 
     
     
