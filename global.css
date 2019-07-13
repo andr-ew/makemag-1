@@ -705,6 +705,19 @@ section.previews > article > p.centered {
         font-size: 0.9rem;
     }
     
+    section.previews > article > p em {
+        font-family: "EB Garamond";
+        font-size: 1.1rem;
+    }
+    
+    section.previews > article > p a {
+        font-size: 0.9rem;
+        
+        font-family: inherit;
+        font-style: normal;
+        color: #F287B7;
+    }
+    
     section.previews > article > p span.big {
         font-size: 1.3rem;
     }
