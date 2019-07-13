@@ -693,11 +693,16 @@ section.previews > article > p {
         font-size: 0.9rem;
     }
     
+    section.previews > article > p span.big {
+        font-size: 1.3rem;
+    }
+    
     section.previews > article .bio strong {
         font-family: "Messap";
         
         font-size: 1.1rem;
     }
+    
 }
 
 /*tall-------------------------------------------------------------------------------*/
