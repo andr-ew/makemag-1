@@ -14,15 +14,16 @@
                 location.assign(l + h);
             }
             
+            
             $(window).scroll(function() {
                 function top(jq) {
                     return jq[0].getBoundingClientRect().top;
                 }
-                
+
                 function bottom(jq) {
                     return jq[0].getBoundingClientRect().bottom;
                 }
-                
+
                 function center(jq) {
                     return (jq[0].getBoundingClientRect().top + jq[0].getBoundingClientRect().bottom) / 2;
                 }
@@ -34,7 +35,16 @@
                 else {
                     $(this).last().css("color", "black");
                 }
-                })
+                });
+                
+                $("svg.hamburger line").each(function() {
+                    if(top($("article.issue")) < center($(this)) && bottom($("article.issue")) > center($(this))) {
+                    $(this).css("stroke", "#FFF");
+                }
+                else {
+                    $(this).last().css("stroke", "#000");
+                }
+                });
             })
         </script>
     </head>
