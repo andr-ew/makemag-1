@@ -1081,7 +1081,7 @@ section.previews > article > p.centered {
     section.previews {
         border-left: solid 1px gray;
 
-        padding-top: 3rem;
+        padding-top: 1.5rem;
 
         padding-bottom: 4rem;
 
@@ -1089,18 +1089,12 @@ section.previews > article > p.centered {
     }
 
     section.previews > h1 {
-        color: white;
-        text-shadow:
-       -1px -1px 0 #000,  
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-         1px 1px 0 #000;
 
         font-family: "Messap";
-        font-size: 13.1vw;
+        font-size: 6.9vw;
 
         margin-top: 0;
-        margin-left: -0.5rem;
+        margin-left: -0.15rem;
         margin-bottom: 2rem;
         
 /*        z-index: -2000;*/
@@ -1108,45 +1102,64 @@ section.previews > article > p.centered {
 
     section.previews > article {
         margin-left: 1rem;
-        margin-right: 3rem;
+        margin-right: 1rem;
     }
 
     section.previews > article > h1 {
-        float: left;
-
-        font-family: "Space Mono";
-        font-weight: 300;
-        font-style: italic;
-
-        background-color: white;
-
-        margin: 0;
-    /*    margin-left: -1rem;*/
-
-        font-size: 1.5rem;
-
-        transform: translate(0, -0.5rem)
+    
     }
 
     section.previews > article > h2 {
-        font-family: "Space Mono";
-        font-weight: 300;
-        font-style: italic;
-
-        background-color: white;
-
-        margin: 0;
-        margin-left: 2.25rem;
-        margin-bottom: 2rem;
-
-        font-size: 1.25rem;
+        margin-left: 0;
+        
+        font-size: 2rem;
     }
 
-    section.previews > article > p {
-        margin-left: 3rem;
+    section.previews > article > h3 {
+         font-family: "Space Mono";
+         font-weight: 300;
+    }
 
-        line-height: 1.5;
+    section.previews > article > h4 {
+        font-family: "Messap";
+        
+        margin-bottom: 4rem;
+    }
+    
+    section.previews > article > pre {
+        
+    }
+
+    section.previews > article > p, section.previews > article > pre {
+        margin-left: 0;
+
+        line-height: 1.6;
 
         margin-bottom: 6rem;
+        
+        font-size: 0.68rem;
+    }
+    
+    section.previews > article > p span.big {
+        font-size: 1rem;
+    }
+    
+    section.previews > article .bio strong {
+        font-family: "Messap";
+        
+        font-size: 0.8rem;
+    }
+    
+    section.previews > article > p em {
+        font-family: "EB Garamond";
+        font-size: 0.84rem;
+    }
+    
+    section.previews > article > p a {
+        font-size: 0.68rem;
+        
+        font-family: inherit;
+        font-style: normal;
+        color: #F287B7;
     }
 }
