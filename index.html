@@ -6,21 +6,51 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="global.css"/>
         <link rel="stylesheet" href="index.css"/>
-        <script type="application/javascript">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            function jump(h) {
+                let l = location.href.replace(location.hash,"");
+                
+                location.assign(l + h);
+            }
+            
+            $(window).scroll(function() {
+                function top(jq) {
+                    return jq[0].getBoundingClientRect().top;
+                }
+                
+                function bottom(jq) {
+                    return jq[0].getBoundingClientRect().bottom;
+                }
+                
+                function center(jq) {
+                    return (jq[0].getBoundingClientRect().top + jq[0].getBoundingClientRect().bottom) / 2;
+                }
+                
+                $("nav li a").each(function() {
+                    if(top($("article.issue")) < center($(this)) && bottom($("article.issue")) > center($(this))) {
+                    $(this).css("color", "white");
+                }
+                else {
+                    $(this).last().css("color", "black");
+                }
+                })
+            })
         </script>
     </head>
     <body>
+        
         <main>
             <article class="landing" id="landing">
                 <img class="circle" src="img/circle.png">
-                <a class="read-more" href="http://andrew.gallery/other/make/index.html#intro">
+                <a class="read-more" onclick="jump('#intro')">
                     <p>Read More</p>
                     <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.59 126.47"><defs><style>.cls-1{font-size:59.54px;fill:#000;font-family:SpaceMono-Regular, Space Mono;}.cls-2{fill:none;stroke:#000;stroke-width:5px;}</style></defs><title>talldown-white</title><text class="cls-1" transform="translate(-5.69 131.2)">↓</text><line class="cls-2" x1="12.71" y1="125.16" x2="12.71"/></svg>
                 </a>
                 <div class="issue">
                     <div>
                         <img src="img/cover.jpg">
-                        <a class="link down" href="http://andrew.gallery/other/make/index.html#issue">
+                        <a class="link down" onclick="jump('#issue')">
                             <p>Issue #18: Mad Science</p>
                             <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.59 32.37"><defs><style>.cls-3{font-size:59.54px;font-family:SpaceMono-Regular, Space Mono;fill:#000;}</style></defs><title>down</title><text class="cls-3" transform="translate(-5.69 37.09)">↓</text></svg>
                             <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125.16 6"><defs><style>.cls-4{fill:none;stroke:#000;stroke-width:0.15rem;}</style></defs><title>underline</title><line class="cls-4" y1="0.15rem" x2="125.16" y2="0.15rem"/></svg>
@@ -37,10 +67,16 @@
             <svg class="hamburger two" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72"><defs><style>.cls-12{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:5px;}</style></defs><title>hamburger white</title><line class="cls-12" x1="8" y1="14.25" x2="64" y2="14.25"/><line class="cls-12" x1="8" y1="36" x2="64" y2="36"/><line class="cls-12" x1="8" y1="57.75" x2="64" y2="57.75"/></svg>
             <nav>
                 <ul>
-                    <li><a href="http://andrew.gallery/other/make/index.html#intro">Intro</a></li>
-                    <li><a href="http://andrew.gallery/other/make/index.html#issue">Issue 18</a></li>
-                    <li><a href="http://andrew.gallery/other/make/index.html#preview-one">How It Feels to Be Free</a></li>
-                    <li><a href="http://andrew.gallery/other/make/index.html#preview-two">THEN YOU WILL NEVER BE HAPPY (A STEP STORY)</a></li>
+                    <li><a onclick="jump('#landing')"><h1>Make</h1></a></li>
+                    <li><a onclick="jump('#intro')">Intro</a></li>
+                    <li><a onclick="jump('#issue')">Issue 18</a></li>
+                    <li><a onclick="jump('#previews')"><h1>Make 18 Previews</h1></a></li>
+                    <li><a onclick="jump('#preview-one')">La Independencia (de Puerto Rico)</a></li>
+                    <li><a onclick="jump('#preview-two')">A Short Report on Evolution</a></li>
+                    <li><a onclick="jump('#preview-three')">Animal Worlds</a></li>
+                    <li><a onclick="jump('#preview-four')">QUALITY ASSURANCE</a></li>
+                    <li><a onclick="jump('#exclusives')"><h1>Online Exclusives</h1></a></li>
+                    <li><a onclick="jump('#preview-five')">In Range</a></li>
                 </ul>
                 <ul>
                     <li><a href="https://www.makelit.org/give" target="_blank">Donate →</a></li>
@@ -66,9 +102,11 @@
                         <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125.16 6"><defs><style>.cls-6{fill:none;stroke:#000;stroke-width:1.5rem;}</style></defs><title>underline</title><line class="cls-6" y1="0.15rem" x2="125.16" y2="0.15rem"/></svg>
                     </a>
                 </div>
+<!--
                 <div class="spread">
                     <img src="img/spread.png">
                 </div>
+-->
             </article>
             <article class="issue" id="issue">
                 <img class="cover" src="img/cover.jpg">
@@ -81,7 +119,7 @@
                         <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.59 32.37"><defs><style>.cls-7{font-size:59.54px;font-family:SpaceMono-Regular, Space Mono;fill:#fff;}</style></defs><title>down</title><text class="cls-7" transform="translate(-5.69 37.09)">→</text></svg>
                         <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125.16 6"><defs><style>.cls-8{fill:none;stroke:#fff;stroke-width:1.5rem;}</style></defs><title>underline</title><line class="cls-8" y1="0.15rem" x2="125.16" y2="0.15rem"/></svg>
                     </a>
-                    <a class="link down previews" href="http://andrew.gallery/other/make/index.html#previews">
+                    <a class="link down previews" onclick="jump('#previews')">
                         <p>Previews</p>
                         <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.59 32.37"><defs><style>.cls-9{font-size:59.54px;font-family:SpaceMono-Regular, Space Mono;fill:#fff;}</style></defs><title>down</title><text class="cls-9" transform="translate(-5.69 37.09)">↓</text></svg>
                         <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125.16 6"><defs><style>.cls-10{fill:none;stroke:#fff;stroke-width:1.5rem;}</style></defs><title>underline</title><line class="cls-10" y1="0.15rem" x2="125.16" y2="0.15rem"/></svg>
@@ -353,7 +391,7 @@ with all that freedom?
                 <strong>Raquel Salas Rivera</strong> is the 2018–19 Poet Laureate of Philadelphia. They are the first recipient of the Ambroggio Prize from the Academy of American Poets. They have authored five full-length poetry books. Their book, <em>lo terciario/the tertiary</em>, was on the 2018 National Book Award Longlist.
             </p>
         </article>
-                <article>
+                <article id="preview-two">
 <!--                    <h1>2.</h1>-->
                     <h2><em>A Short Report on Evolution</em></h2>
                     <h3>From <em>The After-Normal: Brief, Alphabetical Essays on a Changing Planet</em><br></h3>
@@ -415,7 +453,7 @@ with all that freedom?
                         <strong>Nicole Walker</strong> is the author of Sustainability: A Love Story (Ohio State University Press, 2018) and The After-Normal from (Rose Metal Press, 2019).
                     </p>
                 </article>
-                <article>
+                <article id="preview-three">
 <!--                    <h1>3.</h1>-->
                     <h2><em>Animal Worlds</em></h2>
                     <h4>By: Liliana Colanzi<br>Translated from the Spanish by Julia Sanches</h4>
@@ -439,7 +477,7 @@ with all that freedom?
                         <strong>Julia Sanches</strong> is a literary translator of Portuguese, Spanish, Catalan, and French. She has translated books by Noemi Jaffe and is currently translating works by Geovani Martins, Daniel Galera, and Claudia Hernández.
                     </p>
                 </article>
-                <article>
+                <article id="preview-four">
 <!--                    <h1>4.</h1>-->
                     <h2><em>QUALITY ASSURANCE</em></h2>
                     <h4>By: Anne K. Yoder</h4>
@@ -556,8 +594,8 @@ with all that freedom?
                         The factory was transformed into a torch in the night sky, and still smoldered with the return of morning light.<br>
                     </p>
                 </article>
-                <h1>ONLINE&nbsp;EXCLUSIVES</h1>
-                <article>
+                <h1 id="exclusives">ONLINE&nbsp;EXCLUSIVES</h1>
+                <article id="preview-five">
                     <h2><em>In Range</em></h2>
                     <h3><em>Catching up with Poet Rodrigo Toscano</em></h3>
                     <h4>Interview by Cristian Gomez Olivares</h4>

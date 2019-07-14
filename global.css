@@ -24,6 +24,10 @@ html {
   width: 100vw;
 }
 
+a {
+    cursor: pointer;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -36,6 +40,8 @@ body {
 
 main {
     width: 100%;
+    
+    overflow: hidden;
 }
 
 nav {
@@ -60,14 +66,15 @@ nav ul:first-of-type {
 }
 
 nav li {
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.3rem;
     margin-right: 3rem;
     
     list-style: none;
     
-    background-color: white;
-    
     width: 7rem;
+    
+    
+    line-height: 1em;
 }
 
 nav li a {
@@ -76,10 +83,20 @@ nav li a {
     cursor: pointer;
     color: black;
     text-decoration: none;
+    
 }
 
-nav li:hover {
+nav li a:hover {
     text-decoration: underline;
+}
+
+nav li h1 {
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-family: "EB Garamond";
+    font-style: italic;
+    
+    margin-top: 2em;
 }
 
 .link {
@@ -107,10 +124,6 @@ main > article div > p,  {
 
 article {
     overflow: hidden;
-}
-
-article.landing {
-     height: calc(100vh - 20px);
 }
 
 main > article {
@@ -408,6 +421,8 @@ section.previews > article > p.centered {
         grid-template-rows: repeat(4, 25vh);
         
         z-index: 1;
+        
+        height: calc(100vh - 20px);
     }
 
     article.landing > .circle {
@@ -459,6 +474,7 @@ section.previews > article > p.centered {
         height: 100%;
 
         width: 100%;
+        
     }
 
     article.landing > .issue > div {
@@ -552,6 +568,7 @@ section.previews > article > p.centered {
         grid-template-rows: 1fr;
         
         justify-content: space-around;
+
     }
 
     article.issue > img.cover {
@@ -736,7 +753,7 @@ section.previews > article > p.centered {
     
     main > article {
         width: 100%;
-        height: 80vh;
+        height: 70vh;
     }
     
     a, a p {
@@ -824,12 +841,16 @@ section.previews > article > p.centered {
 /*        margin-top: 23rem;*/
 /*        padding-top: 3vw;*/
         
-        width: 6rem;
+/*        width: 6rem;*/
+    }
+    
+    article.landing img.foil {
+        width: 0;
     }
 
     article.landing > .read-more > svg {
         height: 5rem;
-        margin-left: 3rem;
+        margin-left: 2.5rem;
         margin-top: 2rem;
     }
 
@@ -840,7 +861,11 @@ section.previews > article > p.centered {
         width: 28vw;
         height: 100%;
 
-        width: 100%;
+        width: 110%;
+        transform: translate(-5%, 0);
+        
+        
+        padding-top: 3rem; */
     }
     
     article.landing > .issue > div {
@@ -963,7 +988,7 @@ section.previews > article > p.centered {
     }
     
     article.issue, article.issue * {
-        z-index: 12;
+        z-index: 4;
     }
     
     article.issue {
