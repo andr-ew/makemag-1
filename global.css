@@ -10,6 +10,17 @@
 }
 
 @font-face {
+  font-family: "EB Garamond";
+  src: url(font/EBGaramond-Regular.ttf);
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url(font/EBGaramond-Italic.ttf);
+  font-style: italic;
+}
+
+@font-face {
     font-family: "Messap";
     src: url(font/Messapia-Bold.otf);
 }
