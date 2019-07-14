@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "EB Garamond";
-  src: url(font/EBGaramond-Italic.ttf);
+  src: url(font/EBGaramond-RegularItalic.ttf);
   font-style: italic;
 }
 
@@ -205,7 +205,7 @@ article.landing > .issue {
     justify-content: center;
     align-content: center;
     
-    padding-top: 6rem;
+/*    padding-top: 6rem;*/
 }
 
 article.landing > .issue * {
@@ -496,8 +496,10 @@ section.previews > article > p.centered {
     }
 
     article.landing > .issue > div {
+/*
         margin-top: 50vh;
         transform: translate(0, -50%)
+*/
     }
 
     article.landing > .issue img {
