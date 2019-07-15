@@ -901,6 +901,8 @@ section.previews > article > p.centered {
         width: 110%;
         transform: translate(-5%, 0);
         
+        max-width: 253.422px;
+        margin: auto;
         
         padding-top: 3rem; */
     }
