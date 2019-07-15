@@ -686,7 +686,7 @@ I used to walk everywhere naked
                     });
                 }
                 
-                $("svg.hamburger line").each(function() {
+                $("main:not(.open) svg.hamburger line").each(function() {
                     if(top($("article.issue")) < center($(this)) && bottom($("article.issue")) > center($(this))) {
                     $(this).css("stroke", "#FFF");
                 }
