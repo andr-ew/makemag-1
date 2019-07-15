@@ -353,7 +353,7 @@ section.previews article pre,  section.previews article p {
 }
 
 section.previews > article > p {
-    width: 100%;
+/*    width: 100%;*/
     max-width: 52em;
 }
 
