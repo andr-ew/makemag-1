@@ -83,20 +83,18 @@ nav li {
 }
 
 nav li a {
-    font-size: 0.65rem;
+    
     
     cursor: pointer;
-    color: black;
+    
     text-decoration: none;
     
 }
-
 nav li a:hover {
     text-decoration: underline;
 }
 
 nav li h1 {
-    font-size: 0.9rem;
     font-weight: 300;
     font-family: "EB Garamond";
     font-style: italic;
@@ -377,6 +375,16 @@ section.previews > article > p.centered {
 
         height: 1px;
     }
+    
+    nav li h1 {
+        font-size: 0.9rem;
+    }
+
+    nav li a {
+        font-size: 0.65rem;
+        color: black;
+    }
+
     
     main > article {
         width: 100%;
@@ -921,27 +929,83 @@ section.previews > article > p.centered {
         top: 0.8rem;
     }
     
-    .hamburger.one {
-        z-index: 12;
-        position: absolute;
+    a.hamburger {
+        height: 2rem;
+    }
+    
+    .hamburger {
+        position: fixed;
         
+        z-index: 6;
         
     }
     
-    .hamburger.two {
-        position: fixed;
+    .hamburger.open line {
+        stroke: #FFF;
+    }
+    
+    .hamburger.open line {
+        transition: all 0.3s;
+    }
+    
+    nav.open {
+        z-index: 5;
         
-        z-index: 
-        
-        background-color: white;
+        opacity: 1;
     }
     
     nav {
-        width: 0;
+        transition: opacity 0.3s;
         
-        z-index: 3;
+        width: 100vw;
+        
+        overflow: hidden;
+        
+        opacity: 0;
+        
+        z-index: -1;
     
         position: fixed;
+        top: 0;
+        right: 0;
+        
+        height: 100vh;
+        
+        background-color: black;
+        text-overflow: clip;
+    }
+    
+    nav * {
+        color: white;
+        
+        font-size: 0.9rem;
+        line-height: normal;
+        
+        text-overflow: clip;
+    }
+    
+    nav h1 {
+        font-size: 1rem;
+    }
+    
+    nav > ul {
+        position: relative;
+        
+        left: -25%;
+        
+        width: 70%;
+    }
+    
+    nav > ul > li {
+        width: 0;
+        
+        margin-bottom: 0.5em;
+        
+        
+    }
+    
+    nav.open > ul > li {
+        width: 100%;
     }
     
     article.intro {
@@ -1122,6 +1186,10 @@ section.previews > article > p.centered {
         
 /*        z-index: -2000;*/
     }
+    
+    section.previews > h1#exclusives {
+        font-size: 6.6vw;
+    }
 
     section.previews > article {
         margin-left: 1rem;
@@ -1186,5 +1254,13 @@ section.previews > article > p.centered {
         font-family: inherit;
         font-style: normal;
         color: #F287B7;
+    }
+    
+    main > article, main > section {
+        opacity: 1;
+    }
+    
+    main.open > article, main.open > section {
+        opacity: 0;
     }
 }

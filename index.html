@@ -7,46 +7,6 @@
         <link rel="stylesheet" href="global.css"/>
         <link rel="stylesheet" href="index.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script>
-            function jump(h) {
-                let l = location.href.replace(location.hash,"");
-                
-                location.assign(l + h);
-            }
-            
-            
-            $(window).scroll(function() {
-                function top(jq) {
-                    return jq[0].getBoundingClientRect().top;
-                }
-
-                function bottom(jq) {
-                    return jq[0].getBoundingClientRect().bottom;
-                }
-
-                function center(jq) {
-                    return (jq[0].getBoundingClientRect().top + jq[0].getBoundingClientRect().bottom) / 2;
-                }
-                
-                $("nav li a").each(function() {
-                    if(top($("article.issue")) < center($(this)) && bottom($("article.issue")) > center($(this))) {
-                    $(this).css("color", "white");
-                }
-                else {
-                    $(this).last().css("color", "black");
-                }
-                });
-                
-                $("svg.hamburger line").each(function() {
-                    if(top($("article.issue")) < center($(this)) && bottom($("article.issue")) > center($(this))) {
-                    $(this).css("stroke", "#FFF");
-                }
-                else {
-                    $(this).last().css("stroke", "#000");
-                }
-                });
-            })
-        </script>
     </head>
     <body>
         
@@ -74,7 +34,9 @@
             </article>
             <img class="divider" src="img/divider.png">
 <!--            <svg class="hamburger one" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72"><defs><style>.cls-11{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:5px;}</style></defs><title>hamburger white</title><line class="cls-11" x1="8" y1="14.25" x2="64" y2="14.25"/><line class="cls-11" x1="8" y1="36" x2="64" y2="36"/><line class="cls-11" x1="8" y1="57.75" x2="64" y2="57.75"/></svg>-->
-            <svg class="hamburger two" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72"><defs><style>.cls-12{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:5px;}</style></defs><title>hamburger white</title><line class="cls-12" x1="8" y1="14.25" x2="64" y2="14.25"/><line class="cls-12" x1="8" y1="36" x2="64" y2="36"/><line class="cls-12" x1="8" y1="57.75" x2="64" y2="57.75"/></svg>
+            <a class="hamburger">
+                <svg class="hamburger two" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72"><defs><style>.cls-12{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:5px;}</style></defs><title>hamburger white</title><line class="cls-12" x1="8" y1="14.25" x2="64" y2="14.25"/><line class="cls-12" x1="8" y1="36" x2="64" y2="36"/><line class="cls-12" x1="8" y1="57.75" x2="64" y2="57.75"/></svg>
+            </a>
             <nav>
                 <ul>
                     <li><a onclick="jump('#landing')"><h1>Make</h1></a></li>
@@ -693,5 +655,66 @@ I used to walk everywhere naked
                 </article>
             </section>
         </main>
+        <script>
+            function jump(h) {
+                let l = location.href.replace(location.hash,"");
+                
+                location.assign(l + h);
+            }
+            
+            var scrollcheck = function() {
+                function top(jq) {
+                    return jq[0].getBoundingClientRect().top;
+                }
+
+                function bottom(jq) {
+                    return jq[0].getBoundingClientRect().bottom;
+                }
+
+                function center(jq) {
+                    return (jq[0].getBoundingClientRect().top + jq[0].getBoundingClientRect().bottom) / 2;
+                }
+                
+                if($(window).width < $(window).height) { 
+                    $("nav li a").each(function() {
+                        if(top($("article.issue")) < center($(this)) && bottom($("article.issue")) > center($(this))) {
+                        $(this).css("color", "white");
+                    }
+                    else {
+                        $(this).last().css("color", "black");
+                    }
+                    });
+                }
+                
+                $("svg.hamburger line").each(function() {
+                    if(top($("article.issue")) < center($(this)) && bottom($("article.issue")) > center($(this))) {
+                    $(this).css("stroke", "#FFF");
+                }
+                else {
+                    $(this).last().css("stroke", "#000");
+                }
+                });
+            }
+            
+            $(window).scroll(scrollcheck);
+            
+            function open(thing) {
+                thing.hasClass("open") ? thing.removeClass("open") : thing.addClass("open");
+            }
+            
+            $("a.hamburger, nav li a").click(function() {
+                open($(this));
+                open($("nav"));
+                open($("main > article, main > section"));
+                
+                if($("nav").hasClass("open")) {
+                    $("svg.hamburger line").css("stroke", "#FFF");
+                } else {
+                    $("svg.hamburger line").css("stroke", "#000");
+                    
+                    scrollcheck();
+                }
+            });
+        </script>
     </body>
 <html/>
