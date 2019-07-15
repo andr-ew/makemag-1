@@ -705,7 +705,7 @@ I used to walk everywhere naked
             $("a.hamburger, nav li a").click(function() {
                 open($(this));
                 open($("nav"));
-                open($("main > article, main > section"));
+                open($("main"));
                 
                 if($("nav").hasClass("open")) {
                     $("svg.hamburger line").css("stroke", "#FFF");

@@ -525,6 +525,8 @@ section.previews > article > p.centered {
     article.intro {
         grid-template-columns: repeat(4, 25vw);
         grid-template-rows: repeat(4, 25vh);
+        
+        transform: translate(0, -2.4rem);
     }
 
     article.intro > .make {
@@ -997,20 +999,22 @@ section.previews > article > p.centered {
     }
     
     nav > ul > li {
-        width: 0;
+        z-index: -4;
         
         margin-bottom: 0.5em;
         
-        
+        width: 100%;
     }
     
     nav.open > ul > li {
-        width: 100%;
+        z-index: 1;
     }
     
     article.intro {
         grid-template-columns: repeat(8, 12.5%);
         grid-template-rows: repeat(8, 12.5%);
+        
+        transform: translate(0, -0.3rem);
     }
 
     article.intro > .make {
@@ -1256,11 +1260,13 @@ section.previews > article > p.centered {
         color: #F287B7;
     }
     
-    main > article, main > section {
+    main > *:not(nav):not(.hamburger)  {
         opacity: 1;
+        
+        transition: opacity 0.3s;
     }
     
-    main.open > article, main.open > section {
+    main.open > *:not(nav):not(.hamburger) {
         opacity: 0;
     }
 }
