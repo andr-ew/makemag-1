@@ -59,13 +59,6 @@ main {
 nav {
     font-family: "Space Mono";
     
-    z-index: 3;
-    
-    position: sticky;
-    
-    top: 0rem;
-    
-    height: 1px;
 /*    widows: 100%;*/
     
     display: flex;
@@ -111,7 +104,7 @@ nav li h1 {
     margin-top: 2em;
 }
 
-nav li h1:nth-of-type(1) {
+nav li h1:first-of-type() {
     margin-top: 0;
 }
 
@@ -375,7 +368,15 @@ section.previews > article > p.centered {
 /* wide ---------------------------------------------------------------------------*/
 @media all and (min-width: 100vh) {  
     
+    nav {
+        z-index: 3;
     
+        position: sticky;
+
+        top: 0rem;
+
+        height: 1px;
+    }
     
     main > article {
         width: 100%;
@@ -742,10 +743,12 @@ section.previews > article > p.centered {
         font-size: 0.9rem;
     }
     
+/*
     section.previews > article > p em {
         font-family: "EB Garamond";
         font-size: 1.1rem;
     }
+*/
     
     section.previews > article > p a {
         font-size: 0.9rem;
@@ -769,6 +772,8 @@ section.previews > article > p.centered {
 
 /*tall-------------------------------------------------------------------------------*/
 @media all and (max-width: 100vh) { 
+    
+    
     .divider {
         height: 2.5rem;
     }
@@ -933,6 +938,10 @@ section.previews > article > p.centered {
     
     nav {
         width: 0;
+        
+        z-index: 3;
+    
+        position: fixed;
     }
     
     article.intro {
@@ -1164,10 +1173,12 @@ section.previews > article > p.centered {
         font-size: 0.8rem;
     }
     
+/*
     section.previews > article > p em {
         font-family: "EB Garamond";
         font-size: 0.84rem;
     }
+*/
     
     section.previews > article > p a {
         font-size: 0.68rem;
