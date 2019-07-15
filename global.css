@@ -1266,6 +1266,10 @@ section.previews > article > p.centered {
         color: #F287B7;
     }
     
+    main.open {
+        overflow: hidden;
+    }
+    
     main > *:not(nav):not(.hamburger)  {
         opacity: 1;
         
