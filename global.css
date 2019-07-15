@@ -982,14 +982,14 @@ section.previews > article > p.centered {
     nav * {
         color: white;
         
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         line-height: normal;
         
         text-overflow: clip;
     }
     
     nav h1 {
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
     
     nav > ul {
@@ -998,6 +998,10 @@ section.previews > article > p.centered {
         left: -25%;
         
         width: 70%;
+    }
+    
+    nav ul:first-of-type {
+        margin-top: 1.5rem
     }
     
     nav > ul > li {
