@@ -40,7 +40,7 @@ a {
     cursor: pointer;
 }
 
-* {
+*:not(main) {
     box-sizing: border-box;
 }
 
@@ -48,15 +48,17 @@ body {
     width: 100vw;
     
     margin: 0;
+    
+    overflow-x: hidden;
 }
 
 main {
     width: 100%;
-    
-/*    overflow: hidden;*/
 }
 
 nav {
+    overflow-x: visible;
+    
     font-family: "Space Mono";
     
 /*    widows: 100%;*/
@@ -64,6 +66,10 @@ nav {
     display: flex;
     flex-direction: column;
     align-items:flex-end;
+}
+
+nav * {
+    overflow-x: visible;
 }
 
 nav ul:first-of-type {
@@ -136,6 +142,7 @@ article {
 main > article {
     background-size: cover;
     background-position: center;
+    
 }
 
 article.landing {
@@ -301,6 +308,8 @@ section.previews {
     border-left: solid 1px gray;
     
     overflow: hidden;
+    
+    overflow-x: hidden;
 }
 
 section.previews > h1 {
@@ -526,6 +535,10 @@ section.previews > article > p.centered {
         grid-template-columns: repeat(4, 25vw);
         grid-template-rows: repeat(4, 25vh);
         
+        
+    }
+    
+    article.intro, article.issue {
         transform: translate(0, -2.4rem);
     }
 
@@ -788,7 +801,7 @@ img.graphic {
     z-index: -1;
 }
 
-#preview-two img.graphic.one {
+.preview-two img.graphic.one {
     opacity: 1;
     
     width: 35rem;
@@ -798,7 +811,7 @@ img.graphic {
     transform: translate(45vw, -22vh);
 }
 
-#preview-two img.graphic.two {
+.preview-two img.graphic.two {
     opacity: 1;
     
     width: 45rem;
@@ -808,7 +821,7 @@ img.graphic {
     transform: translate(-35vw, 38vh);
 }
 
-#preview-two img.graphic.three {
+.preview-two img.graphic.three {
     opacity: 1;
     
     width: 45rem;
@@ -818,7 +831,7 @@ img.graphic {
     transform: translate(65vw, 120vh) rotate(180deg);
 }
 
-#preview-two img.graphic.four {
+.preview-two img.graphic.four {
     opacity: 1;
     
     width: 45rem;
@@ -828,7 +841,7 @@ img.graphic {
     transform: translate(-35vw, 220vh);
 }
 
-#preview-three img.graphic.one {
+.preview-three img.graphic.one {
     opacity: 1;
     
     width: 50rem;
@@ -838,7 +851,7 @@ img.graphic {
     transform: translate(55vw, 10vh);
 }
 
-#preview-three img.graphic.two {
+.preview-three img.graphic.two {
     opacity: 1;
     
     width: 65rem;
@@ -848,7 +861,7 @@ img.graphic {
     transform: translate(-46vw, 38vh);
 }
 
-#preview-three img.graphic.three {
+.preview-three img.graphic.three {
     opacity: 1;
     
     width: 45rem;
@@ -858,7 +871,37 @@ img.graphic {
     transform: translate(65vw, 120vh) rotate(180deg);
 }
 
-#preview-three img.graphic.four {
+.preview-four img.graphic.one {
+    opacity: 1;
+    
+    width: 30rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(65vw, 20vh);
+}
+
+.preview-four img.graphic.two {
+    opacity: 1;
+    
+    width: 55rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(-55vw, 38vh);
+}
+
+.preview-four img.graphic.three {
+    opacity: 1;
+    
+    width: 23rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(58vw, 135vh);
+}
+
+.preview-four img.graphic.four {
     opacity: 1;
     
     width: 45rem;
@@ -868,8 +911,52 @@ img.graphic {
     transform: translate(-35vw, 220vh);
 }
 
+.preview-five img.graphic.one {
+    opacity: 1;
+    
+    width: 30rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(65vw, 20vh);
+}
+
+.preview-five img.graphic.two {
+    opacity: 1;
+    
+    width: 20rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(-17vw, 38vh);
+}
+
+.preview-five img.graphic.three {
+    opacity: 1;
+    
+    width: 15rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(68vw, 135vh);
+}
+
+.preview-five img.graphic.four {
+    opacity: 1;
+    
+    width: 37rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(-10vw, 220vh);
+}
+
 /*tall-------------------------------------------------------------------------------*/
 @media all and (max-width: 100vh) { 
+    
+    section article img.graphic.graphic.graphic.graphic.graphic.graphic.graphic.graphic.graphic {
+        width: 0rem;
+    }
     
     
     .divider {
