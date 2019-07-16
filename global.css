@@ -780,6 +780,94 @@ section.previews > article > p.centered {
     
 }
 
+img.graphic {
+    position: absolute;
+    
+    opacity: 0;
+    
+    z-index: -1;
+}
+
+#preview-two img.graphic.one {
+    opacity: 1;
+    
+    width: 35rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(45vw, -22vh);
+}
+
+#preview-two img.graphic.two {
+    opacity: 1;
+    
+    width: 45rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(-35vw, 38vh);
+}
+
+#preview-two img.graphic.three {
+    opacity: 1;
+    
+    width: 45rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(65vw, 120vh) rotate(180deg);
+}
+
+#preview-two img.graphic.four {
+    opacity: 1;
+    
+    width: 45rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(-35vw, 220vh);
+}
+
+#preview-three img.graphic.one {
+    opacity: 1;
+    
+    width: 50rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(55vw, 10vh);
+}
+
+#preview-three img.graphic.two {
+    opacity: 1;
+    
+    width: 65rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(-46vw, 38vh);
+}
+
+#preview-three img.graphic.three {
+    opacity: 1;
+    
+    width: 45rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(65vw, 120vh) rotate(180deg);
+}
+
+#preview-three img.graphic.four {
+    opacity: 1;
+    
+    width: 45rem;
+    
+/*    right: 15%;*/
+    
+    transform: translate(-35vw, 220vh);
+}
+
 /*tall-------------------------------------------------------------------------------*/
 @media all and (max-width: 100vh) { 
     

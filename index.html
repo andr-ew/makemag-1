@@ -365,6 +365,10 @@ with all that freedom?
         </article>
                 <article id="preview-two">
 <!--                    <h1>2.</h1>-->
+                    <img class="graphic one" src="img/one/one.png">
+                    <img class="graphic two" src="img/one/two.png">
+                    <img class="graphic three" src="img/one/three.png">
+                    <img class="graphic four" src="img/one/four.png">
                     <h2><em>A Short Report on Evolution</em></h2>
                     <h3>From <em>The After-Normal: Brief, Alphabetical Essays on a Changing Planet</em><br></h3>
                     <h4>By: Nicole Walker and David Carlin</h4>
@@ -427,6 +431,9 @@ with all that freedom?
                 </article>
                 <article id="preview-three">
 <!--                    <h1>3.</h1>-->
+                    <img class="graphic one" src="img/two/one.png">
+                    <img class="graphic two" src="img/two/two.png">
+                    <img class="graphic three" src="img/two/three.png">
                     <h2><em>Animal Worlds</em></h2>
                     <h4>By: Liliana Colanzi<br>Translated from the Spanish by Julia Sanches</h4>
                     <p>
@@ -675,7 +682,7 @@ I used to walk everywhere naked
                     return (jq[0].getBoundingClientRect().top + jq[0].getBoundingClientRect().bottom) / 2;
                 }
                 
-                if($(window).width < $(window).height) { 
+                if(window.innerWidth > window.innerHeight) { 
                     $("nav li a").each(function() {
                         if(top($("article.issue")) < center($(this)) && bottom($("article.issue")) > center($(this))) {
                         $(this).css("color", "white");
