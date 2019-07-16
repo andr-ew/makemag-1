@@ -131,6 +131,14 @@ a, a p {
     font-weight: 100;
 }
 
+p a {
+    font-size: 0.9rem;
+
+    font-family: inherit;
+    font-style: normal;
+    color: #F287B7;
+}
+
 main > article div > p,  {
     font-family: "SpaceMono-Regular";
 }
@@ -252,6 +260,12 @@ article.intro .literary-magazine h1 {
 article.intro > .content > p {
     font-family: "Space Mono";
 }
+
+article.intro > .content h1 {
+        font-family: "EB Garamond";
+        font-weight: 300;
+        font-style: italic;
+    }
 
 article.intro > .content .link {
     grid-template-columns: min-content min-content;
@@ -578,7 +592,7 @@ section.previews > article > p.centered {
         grid-row: 4 / 8;
     }
 
-    article.intro > .content > p {
+    article.intro > .content > p, article.intro > .content > p a {
         font-size: 0.7rem;
     }
     
